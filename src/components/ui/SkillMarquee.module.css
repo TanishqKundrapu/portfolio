@@ -1,0 +1,77 @@
+.marquee {
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: var(--space-6) 0;
+}
+
+.rail {
+  display: flex;
+  width: max-content;
+  animation: scroll 32s linear infinite;
+}
+
+.rail:hover {
+  animation-play-state: paused;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
+  padding-right: var(--space-10);
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  white-space: nowrap;
+}
+
+.icon {
+  font-size: 1.15rem;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--ink-dim);
+}
+
+.fadeLeft,
+.fadeRight {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  pointer-events: none;
+}
+
+.fadeLeft {
+  left: 0;
+  background: linear-gradient(90deg, var(--bg), transparent);
+}
+
+.fadeRight {
+  right: 0;
+  background: linear-gradient(-90deg, var(--bg), transparent);
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rail {
+    animation: none;
+  }
+}

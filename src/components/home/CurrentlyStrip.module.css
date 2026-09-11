@@ -1,0 +1,55 @@
+.section {
+  padding: var(--section-gap) 0;
+}
+
+.heading {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ink-dim);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: var(--space-10);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+}
+
+.item {
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border);
+}
+
+.period {
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+}
+
+.role {
+  font-size: 1.6rem;
+  margin-top: var(--space-3);
+}
+
+.org {
+  color: var(--accent);
+  font-size: 0.95rem;
+  margin-top: var(--space-1);
+}
+
+.note {
+  color: var(--ink-dim);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-top: var(--space-4);
+  max-width: 42ch;
+}
+
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+}

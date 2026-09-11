@@ -1,0 +1,37 @@
+:root {
+  /* Colors */
+  --color-primary: #3B82F6;
+  --color-secondary: #60A5FA;
+  --color-bg: #09090B;
+  --color-bg-alt: #0c0c10;
+  --color-card: #18181B;
+  --color-card-hover: #1d1d21;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(255, 255, 255, 0.16);
+  --color-text: #F4F4F5;
+  --color-text-muted: #A1A1AA;
+  --color-text-faint: #71717A;
+
+  --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  --gradient-radial: radial-gradient(circle, rgba(59,130,246,0.18), transparent 70%);
+
+  /* Typography */
+  --font-heading: 'Outfit', 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing */
+  --section-padding: 9rem;
+  --container-width: 1240px;
+
+  /* Effects */
+  --shadow-soft: 0 20px 60px rgba(0, 0, 0, 0.45);
+  --shadow-glow: 0 0 40px rgba(59, 130, 246, 0.25);
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-full: 999px;
+  --transition-base: 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-fast: 0.2s ease;
+
+  --navbar-height: 84px;
+  --navbar-height-scrolled: 66px;
+}

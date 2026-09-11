@@ -1,0 +1,32 @@
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+.tab-panel.tab-entering {
+  animation: tab-enter 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tab-panel.tab-leaving {
+  animation: tab-leave 0.25s ease forwards;
+}
+
+@keyframes tab-enter {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes tab-leave {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-16px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tab-panel.tab-entering,
+  .tab-panel.tab-leaving {
+    animation: none;
+  }
+}

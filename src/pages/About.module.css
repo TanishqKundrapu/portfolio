@@ -1,0 +1,106 @@
+.wrap {
+  padding: var(--space-24) 0 var(--space-40);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: var(--space-20);
+}
+
+.title {
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+}
+
+.copy {
+  margin-top: var(--space-10);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  max-width: 62ch;
+}
+
+.copy p {
+  color: var(--ink-dim);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.copy strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-4);
+  margin-top: var(--space-10);
+}
+
+.sideCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.photo {
+  max-width: 100%;
+}
+
+.eduCard {
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-6);
+}
+
+.eduLabel {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: var(--space-3);
+}
+
+.eduDegree {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.eduSchool {
+  color: var(--ink-dim);
+  margin-top: var(--space-2);
+  font-size: 0.92rem;
+}
+
+.eduMeta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-4);
+  font-size: 0.85rem;
+}
+
+.cgpa {
+  color: var(--accent);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+  .sideCol {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .photo {
+    max-width: 140px;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .sideCol {
+    flex-direction: column;
+  }
+}

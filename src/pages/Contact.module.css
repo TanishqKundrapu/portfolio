@@ -1,0 +1,138 @@
+.wrap {
+  padding: var(--space-24) 0 var(--space-40);
+}
+
+.title {
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+}
+
+.dek {
+  color: var(--ink-dim);
+  font-size: 1.05rem;
+  max-width: 56ch;
+  margin-top: var(--space-5);
+  line-height: 1.65;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: var(--space-20);
+  margin-top: var(--space-16);
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.details li {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-faint);
+}
+
+.details a,
+.details span:not(.label) {
+  font-size: 1.1rem;
+}
+.details a:hover {
+  color: var(--accent);
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  margin-top: var(--space-10);
+}
+.socials a {
+  color: var(--ink-dim);
+  font-size: 0.95rem;
+}
+.socials a:hover {
+  color: var(--accent);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.field label {
+  font-size: 0.85rem;
+  color: var(--ink-dim);
+}
+
+.field input,
+.field textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  padding: 0.6rem 0;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: border-color 0.2s var(--ease-soft);
+  resize: vertical;
+}
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.submit {
+  align-self: flex-start;
+  background: var(--accent);
+  color: #16110a;
+  padding: 0.9rem 1.8rem;
+  border-radius: var(--radius-sm);
+  font-weight: 590;
+  font-size: 0.95rem;
+  margin-top: var(--space-2);
+  transition: background 0.25s var(--ease-soft), transform 0.25s var(--ease-out);
+}
+.submit:hover {
+  background: #ffc25c;
+  transform: translateY(-2px);
+}
+
+.status {
+  color: var(--accent);
+  font-size: 0.88rem;
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-16);
+  }
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
