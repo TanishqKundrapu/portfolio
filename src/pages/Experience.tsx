@@ -2,6 +2,7 @@ import PageTransition from '../components/layout/PageTransition';
 import Reveal from '../components/ui/Reveal';
 import SplitHeading from '../components/ui/SplitHeading';
 import { journey } from '../data/journey';
+import { journeyKindIcons } from '../data/skillIcons';
 import styles from './Experience.module.css';
 
 const kindLabel: Record<string, string> = {
@@ -25,9 +26,17 @@ export default function Experience() {
         </p>
 
         <div className={styles.list}>
-          {journey.map((item, i) => (
+          {journey.map((item, i) => {
+            const Icon = journeyKindIcons[item.kind];
+            return (
             <Reveal key={item.title} delay={i * 0.04} className={styles.row}>
-              <span className={`mono ${styles.period}`}>{item.period}</span>
+              <span className={styles.ghostNum} aria-hidden="true">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <div className={styles.marker}>
+                <span className={styles.markerIcon}>{Icon && <Icon />}</span>
+                <span className={`mono ${styles.period}`}>{item.period}</span>
+              </div>
               <div className={styles.main}>
                 <span className={`mono ${styles.kind}`}>{kindLabel[item.kind]}</span>
                 <h3 className={styles.itemTitle}>{item.title}</h3>
@@ -41,7 +50,8 @@ export default function Experience() {
                 )}
               </div>
             </Reveal>
-          ))}
+            );
+          })}
         </div>
       </section>
     </PageTransition>

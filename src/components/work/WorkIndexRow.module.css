@@ -6,6 +6,7 @@
   gap: var(--space-6);
   padding: var(--space-8) 0;
   border-top: 1px solid var(--border);
+  overflow: hidden;
   transition: padding-left 0.3s var(--ease-out);
 }
 
@@ -13,10 +14,37 @@
   padding-left: var(--space-4);
 }
 
+.ghostNum {
+  position: absolute;
+  top: 50%;
+  right: var(--space-8);
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-size: 7rem;
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--border);
+  pointer-events: none;
+  transition: -webkit-text-stroke-color 0.3s var(--ease-soft);
+  z-index: 0;
+}
+
+.row:hover .ghostNum {
+  -webkit-text-stroke-color: var(--accent-dim);
+}
+
 .index {
+  position: relative;
+  z-index: 1;
   font-size: 0.85rem;
   color: var(--ink-faint);
   padding-top: 0.3em;
+}
+
+.main {
+  position: relative;
+  z-index: 1;
 }
 
 .name {
@@ -33,15 +61,27 @@
 .tech {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-4);
+  gap: var(--space-5);
   margin-top: var(--space-4);
 }
-.tech span {
+
+.techTag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
   font-size: 0.75rem;
   color: var(--ink-faint);
 }
 
+.techIcon {
+  font-size: 0.95rem;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
 .status {
+  position: relative;
+  z-index: 1;
   font-size: 0.75rem;
   color: var(--ink-faint);
   text-transform: uppercase;
@@ -51,6 +91,8 @@
 }
 
 .arrow {
+  position: relative;
+  z-index: 1;
   color: var(--ink-faint);
   font-size: 1.15rem;
   padding-top: 0.2em;
@@ -59,6 +101,12 @@
 .row:hover .arrow {
   transform: translateX(4px);
   color: var(--accent);
+}
+
+@media (max-width: 900px) {
+  .ghostNum {
+    display: none;
+  }
 }
 
 @media (max-width: 700px) {

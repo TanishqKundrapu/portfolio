@@ -21,20 +21,58 @@
 }
 
 .row {
+  position: relative;
   display: grid;
-  grid-template-columns: 140px 1fr;
+  grid-template-columns: 100px 1fr;
   gap: var(--space-8);
   padding: var(--space-8) 0;
   border-top: 1px solid var(--border);
+  overflow: hidden;
 }
 .row:last-child {
   border-bottom: 1px solid var(--border);
 }
 
+.ghostNum {
+  position: absolute;
+  top: 50%;
+  right: var(--space-8);
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-size: 7rem;
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--border);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.marker {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.markerIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
 .period {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--ink-faint);
-  padding-top: 0.3em;
 }
 
 .kind {
@@ -42,6 +80,11 @@
   color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.06em;
+}
+
+.main {
+  position: relative;
+  z-index: 1;
 }
 
 .itemTitle {
@@ -80,9 +123,19 @@
   background: var(--ink-faint);
 }
 
+@media (max-width: 900px) {
+  .ghostNum {
+    display: none;
+  }
+}
+
 @media (max-width: 600px) {
   .row {
     grid-template-columns: 1fr;
     gap: var(--space-2);
+  }
+  .marker {
+    flex-direction: row;
+    align-items: center;
   }
 }

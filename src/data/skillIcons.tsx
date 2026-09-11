@@ -1,16 +1,36 @@
 import type { IconType } from 'react-icons';
 import { DiJava } from 'react-icons/di';
-import { FiActivity, FiBox, FiClock, FiCode, FiCpu, FiDatabase, FiEye, FiLayers, FiTerminal } from 'react-icons/fi';
+import {
+  FiActivity,
+  FiAward,
+  FiBookOpen,
+  FiBox,
+  FiBriefcase,
+  FiClock,
+  FiCode,
+  FiCpu,
+  FiDatabase,
+  FiEye,
+  FiGitBranch,
+  FiLayers,
+  FiTerminal,
+  FiTrendingUp,
+  FiUsers,
+} from 'react-icons/fi';
 import {
   SiC,
   SiCss,
+  SiFastapi,
   SiGit,
   SiGithub,
   SiGnubash,
+  SiGooglegemini,
   SiHtml5,
   SiJavascript,
   SiLinux,
+  SiOpencv,
   SiPython,
+  SiReact,
   SiSupabase,
   SiTensorflow,
 } from 'react-icons/si';
@@ -26,6 +46,7 @@ export const skillIcons: Record<string, IconType> = {
   Supabase: SiSupabase,
   Linux: SiLinux,
   'Bash Scripting': SiGnubash,
+  Bash: SiGnubash,
   Git: SiGit,
   GitHub: SiGithub,
   Cron: FiClock,
@@ -38,4 +59,21 @@ export const skillIcons: Record<string, IconType> = {
   'Machine Learning': SiTensorflow,
   'Explainable AI': FiEye,
   'Grad-CAM': FiActivity,
+  'Async Pipelines': FiGitBranch,
+  'LLM Agents': FiCpu,
+  Caching: FiDatabase,
+  'EfficientNet-B2': FiCpu,
+  'Computer Vision': SiOpencv,
+  React: SiReact,
+  FastAPI: SiFastapi,
+  'Gemini AI': SiGooglegemini,
+  'Monte Carlo': FiTrendingUp,
+};
+
+export const journeyKindIcons: Record<string, IconType> = {
+  Work: FiBriefcase,
+  Leadership: FiUsers,
+  Hackathon: FiAward,
+  Academics: FiBookOpen,
+  Competitive: FiTrendingUp,
 };
