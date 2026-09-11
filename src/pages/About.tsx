@@ -52,7 +52,7 @@ export default function About() {
           </div>
 
           <Reveal className={styles.sideCol}>
-            <FigurePhoto caption={`Fig. 01 — ${profile.location}`} className={styles.photo} />
+            <FigurePhoto className={styles.photo} />
 
             <div className={styles.eduCard}>
               <span className={`mono ${styles.eduLabel}`}>Education</span>

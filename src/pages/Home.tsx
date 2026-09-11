@@ -91,7 +91,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
           >
-            <FigurePhoto caption={`Fig. 01 — ${profile.location}`} />
+            <FigurePhoto />
           </motion.div>
         </div>
       </section>

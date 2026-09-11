@@ -79,4 +79,7 @@
     align-items: flex-start;
     text-align: left;
   }
+  .note {
+    text-align: left;
+  }
 }

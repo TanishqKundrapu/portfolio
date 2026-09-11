@@ -94,7 +94,16 @@
 .toggle {
   display: none;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 5px;
+  width: 44px;
+  height: 44px;
+  margin: -11px;
+  flex-shrink: 0;
+}
+
+.toggle span {
   width: 22px;
 }
 
