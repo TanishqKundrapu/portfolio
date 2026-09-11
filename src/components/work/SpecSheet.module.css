@@ -1,11 +1,24 @@
 .sheet {
+  position: relative;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   background: var(--surface);
   padding: var(--space-8);
+  padding-top: calc(var(--space-8) + 3px);
   display: flex;
   flex-direction: column;
   gap: var(--space-8);
+  overflow: hidden;
+}
+
+.sheet::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), transparent 85%);
 }
 
 .block:not(:last-child) {
@@ -23,18 +36,68 @@
 }
 
 .value {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
   font-size: 1.05rem;
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ink-faint);
+  flex-shrink: 0;
+}
+
+.statusDotLive {
+  background: var(--accent);
+  box-shadow: 0 0 0 0 var(--accent-soft);
+  animation: pulse 2s ease-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--accent-soft);
+  }
+  70% {
+    box-shadow: 0 0 0 7px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
 }
 
 .stack {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  gap: var(--space-3);
 }
 
 .stack li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
   font-size: 0.85rem;
   color: var(--ink-dim);
+}
+
+.stackIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  color: var(--accent);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.stackDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--ink-faint);
 }
 
 .links {
@@ -49,4 +112,10 @@
 }
 .links a:hover {
   text-decoration: underline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .statusDotLive {
+    animation: none;
+  }
 }

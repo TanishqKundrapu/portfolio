@@ -1,9 +1,9 @@
 .wrap {
-  padding: var(--space-16) 0 var(--space-40);
+  padding: var(--space-10) 0 var(--space-40);
 }
 
 .header {
-  margin-top: var(--space-10);
+  margin-top: var(--space-6);
   padding-bottom: var(--space-10);
   border-bottom: 1px solid var(--border);
 }
@@ -31,7 +31,7 @@
   display: grid;
   grid-template-columns: 1fr 300px;
   gap: var(--space-20);
-  margin-top: var(--space-16);
+  margin-top: var(--space-10);
   align-items: start;
 }
 
