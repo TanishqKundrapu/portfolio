@@ -79,7 +79,8 @@
 
 .sidebar {
   position: sticky;
-  top: 96px;
+  top: 88px;
+  margin-top: -10px;
 }
 
 @media (max-width: 900px) {
